@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: Noodplan - Jouw Strategie voor Overzicht</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-[#003f5c] text-white text-center p-8 md:p-12 shadow-lg">
+        <h1 class="text-4xl md:text-5xl font-black mb-2">Jouw Strategie voor Overzicht en Veerkracht</h1>
+        <p class="text-xl md:text-2xl font-light max-w-4xl mx-auto">Een visuele gids voor het opzetten van een robuust noodplan, gebaseerd op de lessen die ik heb geleerd.</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 items-center">
+            <div class="md:col-span-1 bg-white p-6 rounded-lg shadow-md text-center">
+                <div class="text-7xl font-black text-[#E76F51]">75%</div>
+                <h2 class="text-2xl font-bold mt-2">Onvoldoende Voorbereid</h2>
+                <p class="mt-2 text-gray-600">Ondanks de 'Denk Vooruit'-campagne is een groot deel van Nederland nog niet klaar voor een crisis. Dit onderstreept de noodzaak om van voorbereiding een gewoonte te maken, niet een eenmalige taak.</p>
+            </div>
+            <div class="md:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                 <h2 class="text-2xl font-bold text-center text-[#2A9D8F] mb-4">Waarom een Plan Meer is dan een Pakket</h2>
+                 <p class="text-gray-700">In een wereld vol onvoorspelbare gebeurtenissen – van stroomuitval door cyberaanvallen tot extreem weer – is het bezitten van een noodpakket slechts het begin. Een echt plan is een strategie die je rust en overzicht geeft wanneer elke seconde telt. Het gaat niet om angst, maar om het vermogen om nuchter te handelen. Het advies is niet voor niets opgeschroefd naar **72 uur zelfredzaamheid**: onze moderne systemen zijn kwetsbaarder dan we denken.</p>
+            </div>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-md mb-12">
+            <h2 class="text-3xl font-bold text-center text-[#2A9D8F] mb-2">Pijler 1: Het Noodpakket - De Fysieke Basis</h2>
+            <p class="text-center text-gray-600 mb-6 max-w-3xl mx-auto">Uw pakket is uw levenslijn voor de eerste 72 uur. De focus ligt op robuuste, laagtechnologische oplossingen die functioneren zonder externe systemen. De grafiek hieronder toont de belangrijkste categorieën en hun relatieve belang.</p>
+            <div class="chart-container h-80 md:h-96">
+                <canvas id="noodpakketChart"></canvas>
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-4">Een donut chart is hier gekozen om de samenstelling van het totale noodpakket te visualiseren, waarbij elke categorie een essentieel deel van het geheel vormt.</p>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-md mb-12">
+            <h2 class="text-3xl font-bold text-center text-[#2A9D8F] mb-2">Pijler 2: Het Noodplan - Jouw Strategische Leidraad</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Meer dan alleen spullen. Een plan is een strategie die paniek vermindert en effectief handelen mogelijk maakt. Volg deze vier cruciale stappen om jouw persoonlijke strategie te bouwen.</p>
+            <div class="flex flex-col items-center gap-4">
+                
+                <div class="flex flex-col items-center w-full max-w-md">
+                    <div class="bg-[#F4A261] text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl font-bold shadow-md">1</div>
+                    <div class="w-full bg-white p-4 rounded-lg shadow-md mt-4 border-t-4 border-[#F4A261]">
+                        <h3 class="font-bold text-lg">Risicoanalyse</h3>
+                        <p class="text-sm text-gray-600">Ken je omgeving. Gebruik Risicokaart.nl en inspecteer je huis op veiligheid.</p>
+                    </div>
+                </div>
+                <div class="text-4xl font-bold text-[#75B6BF] my-2">↓</div>
+
+                <div class="flex flex-col items-center w-full max-w-md">
+                    <div class="bg-[#F4A261] text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl font-bold shadow-md">2</div>
+                    <div class="w-full bg-white p-4 rounded-lg shadow-md mt-4 border-t-4 border-[#F4A261]">
+                        <h3 class="font-bold text-lg">Communicatieplan</h3>
+                        <p class="text-sm text-gray-600">Spreek ontmoetings-plekken af en wijs een contactpersoon (buiten de regio) aan.</p>
+                    </div>
+                </div>
+                <div class="text-4xl font-bold text-[#75B6BF] my-2">↓</div>
+
+                <div class="flex flex-col items-center w-full max-w-md">
+                    <div class="bg-[#E76F51] text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl font-bold shadow-md">3</div>
+                    <div class="w-full bg-white p-4 rounded-lg shadow-md mt-4 border-t-4 border-[#E76F51]">
+                        <h3 class="font-bold text-lg">Evacuatie & Schuilplan</h3>
+                        <p class="text-sm text-gray-600">Ken je routes. Bepaal een veilige binnenruimte en meerdere verzamelplaatsen.</p>
+                    </div>
+                </div>
+                <div class="text-4xl font-bold text-[#75B6BF] my-2">↓</div>
+
+                <div class="flex flex-col items-center w-full max-w-md">
+                    <div class="bg-[#E76F51] text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl font-bold shadow-md">4</div>
+                    <div class="w-full bg-white p-4 rounded-lg shadow-md mt-4 border-t-4 border-[#E76F51]">
+                        <h3 class="font-bold text-lg">Personalisatie</h3>
+                        <p class="text-sm text-gray-600">Voeg medicijnen, babyvoeding, dierenspullen en belangrijke documenten toe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-md mb-12">
+             <h2 class="text-3xl font-bold text-center text-[#003f5c] mb-2">Pijler 3: Onderhoud - Het Levende Plan</h2>
+             <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Een plan is nooit 'af'. Het is een dynamisch proces van leren en aanpassen. Regelmatig onderhoud zorgt ervoor dat je voorbereiding effectief blijft.</p>
+             <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md border-b-4 border-[#58508d] w-full md:w-1/3">
+                    <div class="text-4xl mb-2">🔄</div>
+                    <h3 class="text-xl font-bold">Herzie & Werk Bij</h3>
+                    <p class="text-sm text-gray-600 mt-2">Minimaal elke 6 maanden. Controleer houdbaarheid, batterijen en documenten. Pas aan bij levensveranderingen.</p>
+                </div>
+                <div class="text-2xl font-bold text-[#003f5c] mx-4 hidden md:block">➔</div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-b-4 border-[#58508d] w-full md:w-1/3">
+                    <div class="text-4xl mb-2">👨‍👩‍👧‍👦</div>
+                    <h3 class="text-xl font-bold">Oefen & Test</h3>
+                    <p class="text-sm text-gray-600 mt-2">Minimaal 1-2 keer per jaar. Loop routes, bespreek scenario's en maak iedereen vertrouwd met de plannen en uitrusting.</p>
+                </div>
+                <div class="text-2xl font-bold text-[#003f5c] mx-4 hidden md:block">➔</div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-b-4 border-[#58508d] w-full md:w-1/3">
+                    <div class="text-4xl mb-2">🧠</div>
+                    <h3 class="text-xl font-bold">Leer & Verbeter</h3>
+                    <p class="text-sm text-gray-600 mt-2">Gebruik inzichten uit oefeningen of echte gebeurtenissen om zwakke plekken in je plan te identificeren en te versterken.</p>
+                </div>
+            </div>
+             <p class="text-center text-sm text-gray-500 mt-8">Deze visuele weergave van de onderhoudscyclus benadrukt dat een noodplan een continu proces van verbetering is.</p>
+        </section>
+        
+        <section class="bg-[#003f5c] text-white p-8 rounded-lg shadow-lg">
+             <h2 class="text-3xl font-bold text-center mb-6">Jouw Checklist voor een Robuust Plan</h2>
+             <p class="text-center font-light mb-8 max-w-3xl mx-auto">Begin vandaag nog. Deze concrete aanbevelingen vormen de kern van een veerkrachtige voorbereiding.</p>
+            <ul class="space-y-4 max-w-2xl mx-auto list-inside list-disc">
+                <li>
+                    <strong>Verdiep je basisvoorraad:</strong> Ga verder dan 72 uur. Overweeg een voorraad voor 7-10 dagen en investeer in een waterfilter.
+                </li>
+                <li>
+                    <strong>Diversifieer communicatiemiddelen:</strong> Zorg voor een radio, powerbanks, en oefen met SMS/tekstberichten.
+                </li>
+                <li>
+                    <strong>Beveilig cruciale documenten:</strong> Maak fysieke én wachtwoord-beveiligde digitale kopieën van ID's, verzekeringspapieren en eigendomsbewijzen. Bewaar extern.
+                </li>
+                 <li>
+                    <strong>Personaliseer grondig:</strong> Pas het plan aan op de specifieke behoeften van alle gezinsleden, inclusief medicatie, diëten en huisdieren.
+                </li>
+                <li>
+                    <strong>Oefen realistisch:</strong> Test je plan minimaal twee keer per jaar. Gebruik de lessen om te verbeteren.
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-4 bg-gray-200 text-sm text-gray-600">
+        <p>&copy; 2025 GoedOverleven.nl. Alle rechten voorbehouden.</p>
+    </footer>
+
+
+    <script>
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            let currentLine = '';
+            const lines = [];
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxLength && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            lines.push(currentLine);
+            return lines;
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const ctxPakket = document.getElementById('noodpakketChart').getContext('2d');
+        new Chart(ctxPakket, {
+            type: 'doughnut',
+            data: {
+                labels: ['Water (3L/p/d)', 'Voedsel (lang houdbaar)', ['Communicatie &', 'Informatie'], 'Eerste Hulp & Hygiëne', 'Verlichting & Warmte', ['Financiën &', 'Documenten']],
+                datasets: [{
+                    label: 'Noodpakket Componenten',
+                    data: [25, 25, 15, 15, 10, 10],
+                    backgroundColor: [
+                        '#75B6BF',
+                        '#F4A261',
+                        '#E76F51',
+                        '#2A9D8F',
+                        '#264653',
+                        '#E9C46A'
+                    ],
+                    borderColor: '#f8f9fa',
+                    borderWidth: 4,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                             font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    },
+                    title: {
+                        display: false
+                    }
+                },
+                cutout: '60%'
+            }
+        });
+    </script>
+</body>
+</html>
