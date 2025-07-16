@@ -3,97 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goed Overleven.nl | Jouw Noodvoorbereiding Gids</title>
-    <meta name="description" content="Leer van mijn beproefde ervaringen met noodpakketten, noodplannen en essentiële voorbereiding. Begin met de 72-uur checklist. Jouw betrouwbare startpunt voor zelfredzaamheid.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        :root {
-            --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        }
-        body {
-              font-family: var(--system-ui);
+    <title>Goed Overleven: Uw Gids voor Paraatheid</title>
+    <meta name="description" content="Word écht voorbereid op elke crisis met Goed Overleven. Ontdek complete gidsen, praktische tips & essentiële kennis voor noodsituaties en zelfredzaamheid. Bescherm uw gezin vandaag nog!">
+    <link rel="icon" href="/images/goedoverleven-icon.ico" type="image/x-icon">
+    <!-- Basisversie (minimaal 180×180 px) -->
+    <link rel="apple-touch-icon" href="/images/goedoverleven-icon.ico">
 
-            background-color: #f0f4f8;
-        }
-        .bg-brand-dark { background-color: #003f5c; }
-        .bg-brand-purple { background-color: #58508d; }
-        .text-brand-coral { color: #ff6361; }
-        .text-brand-orange { color: #ffa600; }
-        .border-brand-magenta { border-color: #bc5090; }
-        .icon-large {
-            font-size: 3.5rem;
-            line-height: 1;
-        }
-        #hero img{
-            width: 100%;
-            height: auto;
-        }
-    </style>
+    <!-- Optioneel: specifieke formaten voor verschillende apparaten -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/goedoverleven-icon.ico">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/goedoverleven-icon.ico">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/goedoverleven-icon.ico">
+    <link rel="stylesheet" href="/css/tail.css">
+     <link rel="stylesheet" href="/css/app.css">
+   
 </head>
-<body class="text-gray-800">
+<body class="bg-gray-50">
 
-    <header class="bg-brand-dark text-white text-center p-8 md:p-12">
-        <h1 class="text-4xl md:text-5xl font-black mb-2">GoedOverleven.nl</h1>
-        <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto">Jouw Persoonlijke Gids voor Noodvoorbereiding</p>
+    <!-- Navbar Section -->
+    <nav class="bg-white p-4 shadow-md">
+        <div class="container mx-auto flex items-center justify-between">
+            <a href="https://www.goedoverleven.nl" class="flex items-center">
+                <img src="/images/goedoverleven.webp" alt="Goed Overleven Logo" class="h-12 md:h-16">
+            </a>
+            <!-- CTA Button in Navbar -->
+            <a href="/noodpakket/samenstellen-noodpakket" class="inline-block btn-primary text-sm md:text-base font-bold py-2 px-4 rounded-full shadow-md hover:scale-105 transform">
+                Stel Noodpakket Samen »
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header Section (Hero) -->
+    <header class="relative text-white p-6 md:p-8 text-center shadow-lg flex flex-col justify-center items-center" style="min-height: calc(100vh - 96px);">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/images/goed-overleven-voorbereiding-survival-tent-bos.webp');"></div>
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        
+        <!-- Header Content -->
+        <div class="relative z-10 container mx-auto flex flex-col items-center justify-center">
+            <h1 class="text-3xl md:text-5xl font-black leading-tight">
+                Goed Overleven: <br class="hidden md:inline">Uw Gids voor Paraatheid
+            </h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mt-4">
+                In een snel veranderende wereld is persoonlijke paraatheid crucialer dan ooit. Bescherm uzelf en uw gezin tegen onverwachte crises.
+            </p>
+            <a href="/noodpakket/samenstellen-noodpakket" class="inline-block btn-primary text-xl md:text-2xl font-bold py-4 px-8 rounded-full shadow-lg mt-8 hover:scale-105 transform">
+                Start Met Uw Noodpakket Tool »
+            </a>
+        </div>
     </header>
 
     <main class="container mx-auto p-4 md:p-8">
 
-        <section id="hero" class="mb-12">
-            <div class="relative bg-gray-300 h-64 md:h-96 rounded-lg shadow-lg overflow-hidden flex items-center justify-center text-center text-gray-700 font-bold text-2xl">
-                <img src="/images/noodpakket.webp" alt="noodpakket gevult met verschillende producten die je nodig kunt hebben in een ramp senario." width="358" height="358" decoding="async">
-            </div>
-            <div class="bg-white p-6 md:p-8 rounded-lg shadow-md -mt-16 mx-4 relative z-10 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-purple mb-4">Voorbereid op Elke Situatie, Met Vertrouwen.</h2>
-                <p class="text-lg text-gray-700 max-w-3xl mx-auto">Welkom bij goedoverleven.nl, de plek waar ik mijn persoonlijke ervaringen en praktische tips deel om jou te helpen veerkrachtiger te zijn, wat er ook gebeurt. Het gaat hier niet om angst of paniek, maar om kennis, voorbereiding en het vermogen om nuchter te handelen wanneer dat het meest telt.</p>
-            </div>
-        </section>
-
-        <section id="introduction" class="mb-12 text-center">
-            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-bold text-brand-purple mb-4">Jouw Startpunt voor een Veerkrachtiger Leven: Mijn Ervaringen Gedeeld.</h3>
-                <p class="text-lg text-gray-700">In een wereld die soms onvoorspelbaar aanvoelt, is het geruststellend om te weten dat je de basisvaardigheden en middelen hebt om cruciale momenten goed te doorstaan. Ik geloof dat iedereen, ongeacht achtergrond, de touwtjes in eigen handen kan nemen. Op deze website deel ik mijn beproefde methoden, lessen die ik zelf heb geleerd, en de stappen die ik neem om mezelf en mijn naasten te wapenen voor de toekomst. Vanuit mijn eigen praktijkervaring help ik jou op weg.</p>
-            </div>
-        </section>
-
-        <section id="pillars" class="mb-12">
-            <h2 class="text-3xl font-bold text-center text-brand-purple mb-8">Twee Essentiële Pijlers van Noodvoorbereiding</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md border-b-4 border-brand-magenta flex flex-col items-center text-center">
-                    <span class="icon-large text-brand-magenta mb-4">🚨</span>
-                    <h3 class="text-2xl font-bold text-brand-purple mb-3">1. Noodpakketten: Jouw Basis voor Directe Hulp</h3>
-                    <p class="text-gray-700 mb-4">Wat zit er in mijn noodpakket en waarom? Hoe heb ik het samengesteld? En waarom zijn bepaalde items onmisbaar gebleken in situaties die ik heb ervaren? Dit cluster gaat over de concrete, tastbare items die jou en je gezin door de eerste cruciale uren of dagen heen helpen. Ik deel mijn persoonlijke keuzes en de redenen daarachter.</p>
-                    <a href="/noodpakket/" class="inline-block bg-brand-purple text-white px-6 py-3 rounded-full font-bold hover:bg-brand-dark transition-colors duration-300">Ontdek Mijn Noodpakket & Essentiële Uitrusting »</a>
+        <!-- Urgency Section -->
+        <section class="my-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-green mb-6">Waarom Nu Voorbereiden?</h2>
+            <p class="max-w-4xl mx-auto text-lg mb-8">
+                De wereld om ons heen is onzeker. Geopolitieke spanningen, cyberaanvallen en extreme weersomstandigheden kunnen leiden tot langdurige uitval van basisvoorzieningen zoals stroom, water of internet. De overheid adviseert: wees voorbereid om de eerste <strong class="text-[#D92323]">72 uur</strong> zelfstandig te overbruggen.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6 w-full md:w-80 text-left border border-brand-green-light">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full text-brand-green text-5xl mb-4">🌐</div>
+                    <h3 class="text-xl font-semibold text-brand-green mb-2">Geopolitieke Spanningen</h3>
+                    <p class="text-gray-700 text-sm">Toenemende internationale conflicten en de strijd om invloed kunnen directe gevolgen hebben voor onze veiligheid.</p>
                 </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-md border-b-4 border-brand-coral flex flex-col items-center text-center">
-                    <span class="icon-large text-brand-coral mb-4">🤔</span>
-                    <h3 class="text-2xl font-bold text-brand-purple mb-3">2. Noodplannen: Jouw Strategie voor Overzicht</h3>
-                    <p class="text-gray-700 mb-4">Meer dan alleen spullen; een noodplan is jouw leidraad wanneer elke seconde telt. Ik laat je zien hoe ik mijn eigen noodplan heb opgezet voor diverse scenario's – van stroomuitval thuis tot communicatieproblemen. Dit zijn mijn lessen voor een gestructureerde aanpak, gebaseerd op wat ik heb ervaren en geleerd in het planningsproces.</p>
-                    <a href="/noodplannen/" class="inline-block bg-brand-purple text-white px-6 py-3 rounded-full font-bold hover:bg-brand-dark transition-colors duration-300">Creëer Jouw Persoonlijke Noodplan »</a>
+                <div class="bg-white rounded-lg shadow-md p-6 w-full md:w-80 text-left border border-brand-green-light">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full text-brand-green text-5xl mb-4">💻</div>
+                    <h3 class="text-xl font-semibold text-brand-green mb-2">Cyberaanvallen & Desinformatie</h3>
+                    <p class="text-gray-700 text-sm">Digitale dreigingen kunnen vitale infrastructuur ontwrichten en het vertrouwen in informatie ondermijnen.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 w-full md:w-80 text-left border border-brand-green-light">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-full text-brand-green text-5xl mb-4">⛈️</div>
+                    <h3 class="text-xl font-semibold text-brand-green mb-2">Natuurrampen & Uitval</h3>
+                    <p class="text-gray-700 text-sm">Extreme weersomstandigheden, stroomuitval of watertekorten kunnen ons dagelijks leven direct beïnvloeden.</p>
                 </div>
             </div>
         </section>
 
-        <section id="72-hour-checklist" class="mb-12 bg-brand-orange text-brand-dark p-6 md:p-8 rounded-lg shadow-lg text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">De Cruciale Eerste 72 Uur: Jouw Persoonlijke Checklist!</h2>
-            <p class="text-lg font-light max-w-3xl mx-auto mb-6">De eerste 72 uur na een calamiteit zijn vaak de meest bepalende. Dit is de periode waarin je waarschijnlijk op jezelf bent aangewezen voordat officiële hulpdiensten volledig operationeel zijn. Daarom heb ik een praktische 72-uurs checklist samengesteld, direct gebaseerd op mijn eigen voorbereidingen en de lessen die ik heb geleerd.</p>
-            <p class="text-xl font-semibold mb-8">Deze checklist helpt je stap voor stap om de belangrijkste aspecten af te dekken voor die cruciale periode. Het is een compacte, direct toepasbare gids die je houvast geeft wanneer het erop aankomt, en je helpt te zien waar jij nog kunt optimaliseren in je voorbereidingen.</p>
-            <a href="/noodpakket/" class="inline-block bg-brand-dark text-white px-8 py-4 rounded-full font-black text-xl shadow-lg hover:bg-brand-purple transition-colors duration-300">Download Jouw 72-Uurs Checklist Nu »</a>
+        <!-- Solution Section: The Noodpakket -->
+        <section class="my-12 bg-white rounded-lg shadow-xl p-8 md:p-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-green mb-6">Uw Noodpakket: Uw Eerste Verdediging</h2>
+            <p class="max-w-3xl mx-auto text-lg mb-8">
+                Een goed samengesteld noodpakket is essentieel om de eerste 72 uur van een crisis te overbruggen. Het bevat de basisbenodigdheden om uzelf en uw dierbaren veilig en comfortabel te houden wanneer hulpdiensten overbelast zijn.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-10">
+                <div class="flex flex-col items-center p-4 bg-brand-green-light rounded-lg border border-brand-green-light">
+                    <span class="text-5xl mb-2">💧</span>
+                    <h4 class="font-bold text-brand-green">Water</h4>
+                    <p class="text-sm text-gray-700">3 liter p.p. p.d.</p>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-brand-green-light rounded-lg border border-brand-green-light">
+                    <span class="text-5xl mb-2">🥫</span>
+                    <h4 class="font-bold text-brand-green">Voedsel</h4>
+                    <p class="text-sm text-gray-700">Lang houdbaar</p>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-brand-green-light rounded-lg border border-brand-green-light">
+                    <span class="text-5xl mb-2">📻</span>
+                    <h4 class="font-bold text-brand-green">Informatie</h4>
+                    <p class="text-sm text-gray-700">Radio & powerbank</p>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-brand-green-light rounded-lg border border-brand-green-light">
+                    <span class="text-5xl mb-2">💡</span>
+                    <h4 class="font-bold text-brand-green">Verlichting</h4>
+                    <p class="text-sm text-gray-700">Zaklamp & kaarsen</p>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-brand-green-light rounded-lg border border-brand-green-light">
+                    <span class="text-5xl mb-2">🩹</span>
+                    <h4 class="font-bold text-brand-green">EHBO</h4>
+                    <p class="text-sm text-gray-700">Incl. medicijnen</p>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-brand-green-light rounded-lg border border-brand-green-light">
+                    <span class="text-5xl mb-2">💰</span>
+                    <h4 class="font-bold text-brand-green">Extra's</h4>
+                    <p class="text-sm text-gray-700">Contant geld & dekens</p>
+                </div>
+            </div>
+            <p class="max-w-3xl mx-auto text-lg mb-8">
+                Maar wat heeft ú precies nodig? Onze interactieve tool helpt u stap voor stap bij het samenstellen van een noodpakket dat perfect aansluit bij uw huishouden en specifieke behoeften.
+            </p>
+            <!-- CTA button removed from here -->
         </section>
 
-        <section id="my-story" class="mb-12 text-center">
-            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
-                <h2 class="text-3xl font-bold text-brand-purple mb-4">Waarom Ik Dit Deel</h2>
-                <p class="text-lg text-gray-700 mb-4">Mijn passie is zelfredzaamheid en noodvoorbereiding en dit is door de jaren heen gegroeid vanuit persoonlijke interesse en de wens om proactief te zijn. Door schade en schande, en talloze uren aan onderzoek en praktijk, heb ik een schat aan ervaring opgedaan. Ik deel deze kennis graag, niet als professional, maar als een mede-burger die gelooft in de kracht van voorbereiding en het delen van beproefde methoden. Alles wat je hier leest, komt voort uit mijn eigen testen, afwegingen en ervaringen.</p>
-                <p class="text-xl font-bold text-brand-dark">Laten we samen bouwen aan een veerkrachtiger morgen, stap voor stap, met de focus op <span class="text-brand-orange">goed overleven</span>.</p>
-            </div>
+        <!-- Community Section -->
+        <section class="my-12 text-center bg-brand-green-light p-8 rounded-lg">
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-green mb-6">Samen Sterker: De Kracht van de Gemeenschap</h2>
+            <p class="max-w-4xl mx-auto text-lg mb-8">
+                Naast persoonlijke voorbereiding is 'samenredzaamheid' cruciaal. Door uw buren te kennen en afspraken te maken, versterkt u de veerkracht van uw hele buurt. Een sterk individu draagt bij aan een sterke gemeenschap.
+            </p>
+            <a href="/noodpakket/samenstellen-noodpakket" class="inline-block btn-primary text-xl md:text-2xl font-bold py-4 px-8 rounded-full shadow-lg hover:scale-105 transform">
+                Zorg Dat U Voorbereid Bent! »
+            </a>
         </section>
 
     </main>
 
-    <footer class="text-center p-4 bg-gray-200 text-sm text-gray-600">
-        <p>&copy; 2025 GoedOverleven.nl. Alle rechten voorbehouden.</p>
+      <!-- Footer Section -->
+    <footer class="text-center p-6 mt-8 bg-gray-200 text-gray-600">
+        <p class="text-sm py-4">Deze tool is gebaseerd op officiële richtlijnen van de Rijksoverheid en is bedoeld om u te helpen bij uw voorbereiding op noodsituaties. Voor de meest actuele informatie, raadpleeg altijd officiële kanalen.</p>
+        <small class="text-sm">&copy; <a href="https://www.goedoverleven.nl" class="text-brand-green hover:underline">goedoverleven.nl</a> - 2025</small>
+
     </footer>
 
 </body>

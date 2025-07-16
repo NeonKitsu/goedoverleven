@@ -3,270 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noodpakket Infographic: FEMA vs. De Nederlandse Overheid</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-         :root {
-            --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-        }
-        body {
-              font-family: var(--system-ui);
+    <title>De Definitieve Gids voor Crisisvoorbereiding in Nederland - Goed Overleven</title>
+    <meta name="description" content="Duik dieper in crisisvoorbereiding met GoedOverleven.nl. Deze gids behandelt noodpakketten, scenario's, overlevingsvaardigheden en mentale weerbaarheid voor elke ramp. Bereid u compleet voor!">
+        <link rel="icon" href="/images/goedoverleven-icon.ico" type="image/x-icon">
+    <!-- Basisversie (minimaal 180×180 px) -->
+    <link rel="apple-touch-icon" href="/images/goedoverleven-icon.ico">
 
-            background-color: #f0f4f8;
-        }
-        .bg-brand-dark { background-color: #003f5c; }
-        .bg-brand-purple { background-color: #58508d; }
-        .text-brand-coral { color: #ff6361; }
-        .text-brand-orange { color: #ffa600; }
-        .border-brand-magenta { border-color: #bc5090; }
-        .kpi-value {
-            font-weight: 900;
-            font-size: 4rem;
-            line-height: 1;
-            color: #003f5c;
-        }
-        .kpi-icon {
-            font-size: 3rem;
-            line-height: 1;
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            max-height: 50vh;
-        }
-        @media (max-width: 768px) {
-            .chart-container {
-                height: 300px;
-            }
-        }
-    </style>
+    <!-- Optioneel: specifieke formaten voor verschillende apparaten -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/goedoverleven-icon.ico">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/goedoverleven-icon.ico">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/goedoverleven-icon.ico">
+    <link rel="stylesheet" href="/css/tail.css">
+     <link rel="stylesheet" href="/css/app.css">
+ 
 </head>
-<body class="text-gray-800">
+<body class="bg-gray-50">
 
-    <header class="bg-brand-dark text-white text-center p-8 md:p-12">
-        <h1 class="text-4xl md:text-5xl font-black mb-2">BENT U VOORBEREID?</h1>
-        <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto">Een visuele gids voor het 72-uurs noodpakket: FEMA vs. De Nederlandse Overheid.</p>
-    </header>
+    <!-- Navbar Section -->
+    <nav class="bg-white p-4 shadow-md">
+        <div class="container mx-auto flex items-center justify-between">
+            <a href="https://www.goedoverleven.nl" class="flex items-center">
+                <img src="/images/goedoverleven.webp" alt="Goed Overleven Logo" class="h-12 md:h-16">
+            </a>
+            <!-- CTA Button in Navbar -->
+            <a href="/noodpakket/samenstellen-noodpakket" class="inline-block btn-primary text-sm md:text-base font-bold py-2 px-4 rounded-full shadow-md hover:scale-105 transform">
+                Stel Noodpakket Samen »
+            </a>
+        </div>
+    </nav>
 
     <main class="container mx-auto p-4 md:p-8">
+        <article class="bg-white rounded-lg shadow-xl p-6 md:p-10 mb-16 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-black text-brand-green mb-6 text-center leading-tight">
+                De Definitieve Gids voor Crisisvoorbereiding in Nederland: <br class="hidden md:inline">Overleef Elke Ramp
+            </h1>
 
-        <section id="intro" class="text-center mb-12">
-            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
-                <h2 class="text-3xl font-bold text-brand-purple mb-4">Het Principe van 72 Uur Zelfredzaamheid</h2>
-                <p class="text-lg">In de eerste 72 uur na een ramp zijn hulpdiensten vaak overbelast. Zowel de Amerikaanse FEMA als de Nederlandse overheid benadrukken dat burgers in staat moeten zijn om voor zichzelf te zorgen gedurende deze kritieke periode. Dit is waarom een goed gevuld noodpakket geen luxe is, maar een noodzaak.</p>
-            </div>
-        </section>
+            <p class="text-lg my-6 leading-relaxed">
+                We leven in een tijd van ongekende verandering. De vanzelfsprekendheden van gisteren zijn de onzekerheden van vandaag. Geopolitieke spanningen aan de grenzen van Europa, de reële dreiging van cyberaanvallen op onze vitale infrastructuur, en steeds extremer weer dwingen ons om voorbereiding serieus te nemen.
+            </p>
+            <p class="text-lg my-6 leading-relaxed">
+                Dit is geen bangmakerij. Dit is een oproep tot realisme en zelfredzaamheid. Als een crisis toeslaat, zijn de eerste 72 uur cruciaal en kan de overheid niet iedereen tegelijk helpen. Jouw veiligheid, en die van je dierbaren, hangt af van de voorbereidingen die je <strong class="text-brand-green">nu</strong> treft.
+            </p>
+            <p class="text-lg my-8 leading-relaxed">
+                Deze gids is jouw allesomvattende strategie. We gaan verder dan het standaard noodpakket en behandelen de meest impactvolle scenario's, de vaardigheden die je nodig hebt en de moeilijke keuzes waar je voor kunt komen te staan.
+            </p>
 
-        <section id="core-essentials" class="mb-12">
-            <h2 class="text-3xl font-bold text-center text-brand-purple mb-6">De Universele Basis: Waar Iedereen Het Over Eens Is</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
-                <div class="bg-white p-4 rounded-lg shadow-md flex flex-col justify-center items-center">
-                    <span class="kpi-icon">💧</span>
-                    <p class="font-bold mt-2">Water</p>
-                    <p class="text-sm">3-4 liter p.p. per dag</p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-md flex flex-col justify-center items-center">
-                    <span class="kpi-icon">🥫</span>
-                    <p class="font-bold mt-2">Voedsel</p>
-                    <p class="text-sm">Houdbaar voor 3+ dagen</p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-md flex flex-col justify-center items-center">
-                    <span class="kpi-icon">📻</span>
-                    <p class="font-bold mt-2">Radio</p>
-                    <p class="text-sm">Op batterijen/opwindbaar</p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-md flex flex-col justify-center items-center">
-                    <span class="kpi-icon">🔦</span>
-                    <p class="font-bold mt-2">Verlichting</p>
-                    <p class="text-sm">Zaklamp & batterijen</p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-md flex flex-col justify-center items-center">
-                    <span class="kpi-icon">⚕️</span>
-                    <p class="font-bold mt-2">EHBO-Kit</p>
-                    <p class="text-sm">Basis eerste hulp</p>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-md flex flex-col justify-center items-center">
-                    <span class="kpi-icon">🔑</span>
-                    <p class="font-bold mt-2">Sleutels & ID</p>
-                    <p class="text-sm">Kopieën & reserves</p>
-                </div>
+            <div class="text-center my-10">
+                <a href="/noodpakket/samenstellen-noodpakket" class="inline-block btn-primary text-xl md:text-2xl font-bold py-4 px-8 rounded-full shadow-lg hover:scale-105 transform">
+                    Start Met Het Samenstellen Van Uw Noodpakket »
+                </a>
             </div>
-        </section>
-        
-        <section id="comparison-chart" class="mb-12">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                 <h2 class="text-3xl font-bold text-center text-brand-purple mb-2">Verschil in Aanpak: Een Kwestie van Schaal</h2>
-                <p class="text-center text-gray-600 mb-6 max-w-3xl mx-auto">FEMA's "bereid je voor op het ergste"-filosofie resulteert in een veel uitgebreidere lijst dan de pragmatische aanpak van de Nederlandse overheid. Deze grafiek toont het aantal aanbevolen items per categorie, wat het verschil in detailniveau illustreert.</p>
-                <div class="chart-container mx-auto max-w-4xl">
-                    <canvas id="comparisonBarChart"></canvas>
-                </div>
-            </div>
-        </section>
 
-        <section id="unique-points" class="mb-12">
-            <h2 class="text-3xl font-bold text-center text-brand-purple mb-6">Unieke Aanbevelingen Die Het Verschil Maken</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-brand-magenta">
-                    <h3 class="text-2xl font-bold mb-3">Nederland: De Digitale Kwetsbaarheid</h3>
-                    <p class="mb-4">De Nederlandse overheid richt zich specifiek op de risico's van een sterk gedigitaliseerde samenleving, zoals een grootschalige stroom- of cyberstoring.</p>
-                    <div class="bg-gray-100 p-6 rounded-lg text-center">
-                        <p class="text-lg font-semibold">Advies: Houd Contant Geld bij de Hand</p>
-                        <p class="kpi-value text-brand-purple">€70</p>
-                        <p class="font-bold">Per volwassene, in kleine coupures.</p>
-                        <p class="text-sm mt-2">Omdat pinautomaten en digitale betalingen kunnen uitvallen.</p>
-                    </div>
-                </div>
+            <section class="my-16">
+                <h2 class="text-3xl font-bold text-brand-green mb-6 border-b-2 border-brand-green-light pb-2">
+                    De Essentiële Basis: Uw Noodpakket voor Thuis
+                </h2>
+                <p class="text-lg mb-4">
+                    Voordat we de diepte ingaan, moet de absolute basis op orde zijn. Dit is de geüpgradede versie van het standaard noodpakket, ontworpen voor minimaal 72 uur zelfredzaamheid in huis.
+                </p>
 
-                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-brand-coral">
-                    <h3 class="text-2xl font-bold mb-3">FEMA: Voorbij Overleving</h3>
-                     <p class="mb-4">FEMA's lijst is ontworpen voor langdurige isolatie en kijkt ook naar administratief herstel en psychologisch welzijn na een ramp.</p>
-                    <div class="bg-gray-100 p-6 rounded-lg">
-                        <p class="text-lg font-semibold text-center mb-3">Cruciale Extra's:</p>
-                        <ul class="list-disc list-inside space-y-2">
-                            <li><span class="font-bold">Uitgebreide Documenten:</span> Kopieën van testamenten, eigendomsaktes, verzekeringen, etc. voor een soepel herstel.</li>
-                            <li><span class="font-bold">Comfort & Mentaal Welzijn:</span> Spelletjes, boeken en speelgoed om stress te verminderen tijdens een crisis.</li>
-                             <li><span class="font-bold">Zelfvoorziening:</span> Items als een schop voor een latrine en bleekmiddel om water te zuiveren.</li>
-                        </ul>
-                    </div>
+                <div class="overflow-x-auto">
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Categorie</th>
+                                <th>Essentiële Items</th>
+                                <th>Toelichting</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-semibold text-brand-green">Water</td>
+                                <td>Min. 3 liter water per persoon per dag & een waterfilter/zuiveringstabletten</td>
+                                <td>Water is je eerste prioriteit. Flessenwater voor de eerste dagen, een filter voor de lange termijn.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-brand-green">Voedsel</td>
+                                <td>Energie- en eiwitrijk voedsel met lange houdbaarheid (blikvoer, peulvruchten, energierepen, noten) & handmatige blikopener</td>
+                                <td>Kies voedsel dat zonder koken gegeten kan worden. Roteer je voorraad jaarlijks.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-brand-green">Communicatie</td>
+                                <td><strong class="text-brand-green">Wereldontvanger</strong> of opwindbare/solar radio (FM/AM/Korte Golf)</td>
+                                <td>Je enige link met de buitenwereld (noodzenders) als stroom en internet uitvallen.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-brand-green">Verlichting</td>
+                                <td>Opwindbare/solar zaklamp, hoofdlamp, kaarsen en lucifers in waterdichte verpakking</td>
+                                <td>Een hoofdlamp houdt je handen vrij voor taken in het donker. Wees extreem voorzichtig met open vuur.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-brand-green">Warmte</td>
+                                <td>Wollen dekens, slaapzakken, thermokleding, extra sokken</td>
+                                <td>Wol isoleert, zelfs als het vochtig is. Laagjes kleding zijn cruciaal bij uitval van de verwarming.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-brand-green">Eerste Hulp</td>
+                                <td>Uitgebreide EHBO-kit, persoonlijke medicatie (min. 1 week voorraad), <strong class="text-brand-green">jodiumtabletten</strong></td>
+                                <td>Vul aan met een handleiding eerste hulp. Jodiumtabletten zijn <strong class="text-brand-green">enkel</strong> op advies van de overheid te gebruiken bij een nucleair incident.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-brand-green">Gereedschap</td>
+                                <td>Multitool, ducttape, werkhandschoenen, breekijzer, afsluiter voor gas/water</td>
+                                <td>Ducttape kan bijna alles repareren. Weet hoe je vitale leidingen in je huis afsluit.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-brand-green">Hygiëne</td>
+                                <td>Desinfectiemiddel, toiletpapier, natte doekjes, zeep, noodtoilet (emmer met deksel en zaagsel)</td>
+                                <td>Voorkom ziektes, wat cruciaal is in een crisissituatie zonder werkend riool.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-brand-green">Documenten & Geld</td>
+                                <td>Waterdicht mapje met kopieën van paspoorten, verzekeringspolissen, eigendomsbewijzen, contant geld (ook kleine coupures)</td>
+                                <td>Alle digitale systemen kunnen uitvallen. Zonder contant geld kun je niets.</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-brand-green">Energie</td>
+                                <td>Minimaal twee opgeladen powerbanks, extra batterijen</td>
+                                <td>Om je telefoon en andere kleine, essentiële apparaten draaiende te houden.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="checklist" class="bg-brand-purple text-white p-6 md:p-8 rounded-lg shadow-lg">
-            <h2 class="text-3xl font-bold text-center mb-6">Uw Ultieme Noodpakket Checklist</h2>
-            <p class="text-center font-light mb-8 max-w-3xl mx-auto">Combineer het beste van beide werelden. Gebruik deze checklist, gebaseerd op de gecombineerde wijsheid van FEMA en de Nederlandse overheid, om een robuust en gepersonaliseerd noodpakket samen te stellen.</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
-                <div>
-                    <h4 class="font-bold text-xl mb-2 text-brand-orange">💧 Voedsel & Water</h4>
-                    <ul class="space-y-1">
-                        <li><label><input type="checkbox" class="mr-2"> Water (3-4L p.p. per dag)</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Lang houdbaar voedsel</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Handmatige blikopener</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Vitamines & speciaal dieetvoedsel</label></li>
-                    </ul>
-                </div>
-                 <div>
-                    <h4 class="font-bold text-xl mb-2 text-brand-orange">⚕️ Eerste Hulp & Hygiëne</h4>
-                    <ul class="space-y-1">
-                        <li><label><input type="checkbox" class="mr-2"> Uitgebreide EHBO-doos</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Persoonlijke medicatie</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Desinfecterende gel/doekjes</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Toiletpapier & hygiëneproducten</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Vuilniszakken</label></li>
-                    </ul>
-                </div>
-                 <div>
-                    <h4 class="font-bold text-xl mb-2 text-brand-orange">🔦 Licht & Communicatie</h4>
-                    <ul class="space-y-1">
-                        <li><label><input type="checkbox" class="mr-2"> Radio (batterij/opwindbaar)</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Zaklamp & extra batterijen</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Powerbank voor mobiel</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Kaarsen en lucifers</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Fluitje</label></li>
-                    </ul>
-                </div>
-                 <div>
-                    <h4 class="font-bold text-xl mb-2 text-brand-orange">🔧 Gereedschap & Veiligheid</h4>
-                    <ul class="space-y-1">
-                        <li><label><input type="checkbox" class="mr-2"> Multifunctioneel gereedschap</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Ducttape</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Stofmasker</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Werkhandschoenen</label></li>
-                    </ul>
-                </div>
-                 <div>
-                    <h4 class="font-bold text-xl mb-2 text-brand-orange">📄 Documenten & Geld</h4>
-                    <ul class="space-y-1">
-                        <li><label><input type="checkbox" class="mr-2"> Contant geld (ca. €70)</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Kopieën van ID's, paspoorten</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Kopieën verzekeringspolissen</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Lijst met noodcontacten</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Reserve sleutels (huis & auto)</label></li>
-                    </ul>
-                </div>
-                 <div>
-                    <h4 class="font-bold text-xl mb-2 text-brand-orange">❤️ Persoonlijk & Comfort</h4>
-                    <ul class="space-y-1">
-                        <li><label><input type="checkbox" class="mr-2"> Dekens of slaapzakken</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Extra kledingset</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Boeken, spelletjes, speelgoed</label></li>
-                        <li><label><input type="checkbox" class="mr-2"> Benodigdheden voor huisdieren</label></li>
-                         <li><label><input type="checkbox" class="mr-2"> Extra bril/lenzen</label></li>
-                    </ul>
-                </div>
-            </div>
-             <div class="text-center mt-8 bg-brand-dark p-4 rounded-lg">
-                <p class="font-bold">Vergeet niet: controleer en ververs uw pakket elke 6 maanden!</p>
-            </div>
-        </section>
+            <section class="my-16">
+                <h2 class="text-3xl font-bold text-brand-green mb-6 border-b-2 border-brand-green-light pb-2">
+                    Bedreigingen en Scenario's: Wat te Doen Als...
+                </h2>
 
+                <section class="my-6">
+                    <h3 class="text-2xl font-semibold text-brand-green mb-3">Oorlog en Gewapend Conflict</h3>
+                    <p class="text-lg">
+                        De oorlog in Oekraïne heeft de realiteit van modern conflict in Europa teruggebracht. Hoewel een directe aanval onwaarschijnlijk is, kunnen de gevolgen van een escalerend conflict ook Nederland raken. Je voorbereiding omvat een evacuatieplan, het bepalen van een schuilplaats in huis, het leren van analoge vaardigheden zoals kaartlezen en het hebben van een waterdicht communicatieplan met je familie.
+                    </p>
+                </section>
+
+                <section class="my-6">
+                    <h3 class="text-2xl font-semibold text-brand-green mb-3">Nucleair Incident (Kernramp of Aanval)</h3>
+                    <p class="text-lg">
+                        De dreiging met kernwapens en de risico's van nabijgelegen kerncentrales vereisen specifieke kennis. De gouden regel is: <strong class="text-brand-green">"Ga naar binnen, blijf binnen, stem af"</strong>. Sluit ramen, deuren en ventilatie en dicht kieren. Neem jodiumtabletten <strong class="text-brand-green">alleen</strong> in op expliciet advies van de overheid. Weet hoe je jezelf moet ontsmetten als je buiten bent geweest.
+                    </p>
+                </section>
+
+                <section class="my-6">
+                    <h3 class="text-2xl font-semibold text-brand-green mb-3">Grootschalige Cyberaanval & Totale Blackout</h3>
+                    <p class="text-lg">
+                        Dit is wellicht het meest realistische scenario voor Nederland. Een aanval op het elektriciteitsnet, waterzuivering of bankensysteem legt het land plat. Zorg voor alternatieve energie (power station, generator), kookmogelijkheden zonder stroom, een grote voorraad water, fysieke kopieën van alle belangrijke informatie en, cruciaal, contant geld.
+                    </p>
+                </section>
+            </section>
+
+            <section class="my-16">
+                <h2 class="text-3xl font-bold text-brand-green mb-6 border-b-2 border-brand-green-light pb-2">
+                    De Cruciale Keuze: Vluchten of Thuisblijven?
+                </h2>
+
+                <section class="my-6">
+                    <h3 class="text-2xl font-semibold text-brand-green mb-3">"Bugging In": Uw Huis als Veilige Haven</h3>
+                    <p class="text-lg">
+                        In de meeste scenario's is thuisblijven de veiligste optie. Je bent beschermd tegen de elementen, hebt al je voorraden bij de hand en je bent geen makkelijk doelwit onderweg. Versterk je huis door te weten hoe je gas, water en elektra afsluit en richt één kamer in als veilige leefruimte.
+                    </p>
+                </section>
+
+                <section class="my-6">
+                    <h3 class="text-2xl font-semibold text-brand-green mb-3">"Bugging Out": De Vluchtrugzak voor een Snel Vertrek</h3>
+                    <p class="text-lg">
+                        Vluchten doe je alleen als je leven direct gevaar loopt (brand, overstroming) of op bevel van de overheid. Voor deze situatie heb je een vluchtrugzak (Bug-Out Bag) per persoon nodig. De focus ligt op lichtgewicht, mobiliteit en 72 uur overleven: een tarp, slaapzak, waterfilter, calorierijke repen, een fysieke kaart, hoofdlamp en een goed mes.
+                    </p>
+                </section>
+            </section>
+
+            <section class="my-16">
+                <h2 class="text-3xl font-bold text-brand-green mb-6 border-b-2 border-brand-green-light pb-2">
+                    Kennis Weegt Niets: Onmisbare Overlevingsvaardigheden
+                </h2>
+                <p class="text-lg mb-4">
+                    De duurste spullen zijn waardeloos als je niet weet hoe je ze moet gebruiken. Investeer in kennis:
+                </p>
+                <ul class="list-disc list-inside text-lg space-y-2 my-6">
+                    <li><strong class="text-brand-green">Water Zuiveren:</strong> Leer hoe je water drinkbaar maakt door het te koken, te filteren of chemisch te behandelen.</li>
+                    <li><strong class="text-brand-green">Eerste Hulp:</strong> Volg een EHBO/BHV-cursus. Het kunnen stelpen van een bloeding is belangrijker dan een doosje pleisters.</li>
+                    <li><strong class="text-brand-green">Situatiebewustzijn:</strong> Train jezelf om je omgeving te 'lezen'. Herken wat normaal is, zodat je afwijkingen en potentieel gevaar direct opmerkt.</li>
+                </ul>
+            </section>
+
+            <section class="my-16">
+                <h2 class="text-3xl font-bold text-brand-green mb-6 border-b-2 border-brand-green-light pb-2">
+                    De Menselijke Factor: Zorg voor Mens en Dier
+                </h2>
+
+                <section class="my-6">
+                    <h3 class="text-2xl font-semibold text-brand-green mb-3">Kinderen, Ouderen en Hulpbehoevenden</h3>
+                    <p class="text-lg">
+                        Een crisis treft niet iedereen gelijk. Betrek kinderen bij de voorbereiding zonder ze bang te maken; geef ze een eigen tasje en een taak. Zorg voor een extra ruime voorraad medicijnen voor ouderen en chronisch zieken, inclusief kopieën van recepten en batterijen voor medische apparatuur.
+                    </p>
+                </section>
+
+                <section class="my-6">
+                    <h3 class="text-2xl font-semibold text-brand-green mb-3">Vergeet de Huisdieren Niet</h3>
+                    <p class="text-lg">
+                        Ook je huisdier is volledig van jou afhankelijk. Stel een dieren-noodpakket samen met voer en water voor meerdere dagen, een reismand of reiskooi, eventuele medicatie en een kopie van het vaccinatieboekje.
+                    </p>
+                </section>
+            </section>
+
+            <section class="my-16">
+                <h2 class="text-3xl font-bold text-brand-green mb-6 border-b-2 border-brand-green-light pb-2">
+                    Voorbij het Materiaal: Mentaliteit en Samenwerking
+                </h2>
+
+                <section class="my-6">
+                    <h3 class="text-2xl font-semibold text-brand-green mb-3">Het Ethische Dilemma: Delen en Zelfbescherming</h3>
+                    <p class="text-lg">
+                        Denk nu na over moeilijke keuzes. Wat doe je als buren in paniek om jouw zorgvuldig opgebouwde voorraden vragen? Hoe ga je om met de dreiging van plunderingen? De beste strategie is de-escalatie, onopvallend zijn en, belangrijker nog, het bouwen van een sterk sociaal netwerk voordat de crisis toeslaat.
+                    </p>
+                </section>
+
+                <section class="my-6">
+                    <h3 class="text-2xl font-semibold text-brand-green mb-3">Samen Sterker: De Kracht van je Gemeenschap</h3>
+                    <p class="text-lg">
+                        De mythe van de 'lone wolf' overlever is levensgevaarlijk. Samenwerking is de sleutel. Leer je buren kennen. Weet wie er medische kennis heeft, wie technisch is, en wie een houtkachel bezit. Door kennis en middelen te delen, wordt de hele gemeenschap veerkrachtiger.
+                    </p>
+                </section>
+            </section>
+
+            <section class="my-16">
+                <h2 class="text-3xl font-bold text-brand-green mb-6 border-b-2 border-brand-green-light pb-2">
+                    Voorbereiding is een Proces, Geen Eindpunt
+                </h2>
+                <p class="text-lg my-6">
+                    Deze gids is geen eindpunt. Het is het begin van een doorlopend proces. De wereld verandert, jouw persoonlijke situatie verandert, en je plan moet mee veranderen.
+                </p>
+                <p class="text-lg my-6">
+                    Gebruik deze pagina als jouw centrale hub. Bespreek het plan met je gezin. Begin klein, maar begin vandaag. Controleer je voorraad en test je uitrusting minstens één keer per jaar.
+                </p>
+                <p class="text-lg my-8 font-semibold">
+                    Door nu te handelen, neem je de controle over je eigen veiligheid. Je transformeert angst voor het onbekende in de rust en het vertrouwen van een goede voorbereiding. Wacht niet op de crisis. De tijd om te handelen is nu.
+                </p>
+            </section>
+
+            <div class="text-center mt-10">
+                <a href="/noodpakket/samenstellen-noodpakket" class="inline-block btn-primary text-xl md:text-2xl font-bold py-4 px-8 rounded-full shadow-lg hover:scale-105 transform">
+                    Start Met Het Samenstellen Van Uw Noodpakket »
+                </a>
+            </div>
+
+        </article>
     </main>
 
-    <footer class="text-center p-4 bg-gray-200 text-sm text-gray-600">
-        <p>Deze infographic is gemaakt op basis van openbare richtlijnen van FEMA (Ready.gov) en de Nederlandse overheid (Denkvooruit.nl). Raadpleeg altijd de officiële bronnen voor de meest actuele informatie.</p>
-    </footer>
+      <!-- Footer Section -->
+    <footer class="text-center p-6 mt-8 bg-gray-200 text-gray-600">
+        <p class="text-sm py-4">Deze tool is gebaseerd op officiële richtlijnen van de Rijksoverheid en is bedoeld om u te helpen bij uw voorbereiding op noodsituaties. Voor de meest actuele informatie, raadpleeg altijd officiële kanalen.</p>
+        <small class="text-sm">&copy; <a href="https://www.goedoverleven.nl" class="text-brand-green hover:underline">goedoverleven.nl</a> - 2025</small>
 
-    <script>
-        const ctx = document.getElementById('comparisonBarChart').getContext('2d');
-        const comparisonBarChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Eerste Hulp', 'Gereedschap', 'Hygiëne', ['Documenten', '& Geld']],
-                datasets: [{
-                    label: 'FEMA (VS)',
-                    data: [27, 13, 17, 18],
-                    backgroundColor: '#58508d',
-                    borderColor: '#003f5c',
-                    borderWidth: 2
-                }, {
-                    label: 'Nederlandse Overheid',
-                    data: [2, 3, 6, 4],
-                    backgroundColor: '#ff6361',
-                    borderColor: '#bc5090',
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                indexAxis: 'y',
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Geschat aantal unieke aanbevolen items'
-                        }
-                    }
-                },
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    title: {
-                        display: false
-                    },
-                    tooltip: {
-                        callbacks: {
-                            title: function(tooltipItems) {
-                                const item = tooltipItems[0];
-                                let label = item.chart.data.labels[item.dataIndex];
-                                if (Array.isArray(label)) {
-                                  return label.join(' ');
-                                } else {
-                                  return label;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        });
-    </script>
+    </footer>
 
 </body>
 </html>
