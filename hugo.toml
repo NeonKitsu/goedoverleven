@@ -1,0 +1,24 @@
+baseURL = 'https://goedoverleven.nl/'
+languageCode = 'nl'
+title = 'Goed Overleven'
+theme = 'ramp'
+disableKinds = ["taxonomy", "term", "rss"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.8
+  filename = "sitemap.xml"
+
+
+
+
+[params]
+    tagline = 'Voorbereiden op Crisis en een Onzekere Toekomst'
+    description = 'Maak je je zorgen over de toenemende onrust in de wereld? Goedoverleven.nl biedt nuchtere, stapsgewijze gidsen voor het aanleggen van een noodpakket, waterzuivering en medische zelfredzaamheid. Verander onzekerheid vandaag nog in een praktisch plan.'
+    logo = '/images/goedoverleven.webp'
+    favicon = '/goedoverleven.ico'

@@ -1,0 +1,387 @@
+{{ define "main" }}
+
+
+<div class="container mx-auto p-4 md:p-8">
+        <section class="my-8 text-center">
+            <!-- Gebruikt de nieuwe, actievere titel uit de (aangepaste) frontmatter -->
+            <h1 class="text-4xl md:text-5xl font-black text-brand-green mb-4">{{ .Title }}</h1>
+            <!-- Gebruikt de nieuwe, kortere intro uit de (aangepaste) frontmatter -->
+            <p class="max-w-3xl mx-auto text-lg mb-4">
+                {{ .Params.intro }}
+            </p>
+        </section>
+
+        <!-- Configuration Section -->
+        <section class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8 text-center">
+            <!-- Aangepaste, vriendelijkere H2 -->
+            <h2 class="text-2xl font-bold text-brand-green mb-4">Stap 1: Stel je Huishouden Samen</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
+                <div class="flex items-center gap-2">
+                    <label for="num-adults" class="text-lg">Volwassenen:</label>
+                    <input type="number" id="num-adults" value="1" min="1" class="w-20 p-2 border border-gray-300 rounded-md text-center">
+                </div>
+                <div class="flex items-center gap-2">
+                    <label for="num-children" class="text-lg">Kinderen:</label>
+                    <input type="number" id="num-children" value="0" min="0" class="w-20 p-2 border border-gray-300 rounded-md text-center">
+                </div>
+            </div>
+            <!-- Aangepaste, duidelijkere knoptekst -->
+            <button id="download-pdf-button" class="btn-primary py-3 px-6 rounded-full shadow-md hover:scale-105 transform inline-block">
+                Download Je Persoonlijke Lijst als PDF »
+            </button>
+        </section>
+
+        <!-- Progress Section -->
+        <section class="bg-brand-green-light rounded-lg shadow-md p-4 mx-auto max-w-full mb-8 text-center">
+            <h2 class="text-xl font-bold text-brand-green mb-2">Jouw Voortgang</h2>
+            <p class="text-lg mb-2">
+                Items verzameld: <span id="collected-count" class="font-bold text-brand-green">0</span> van <span id="total-count" class="font-bold">0</span>
+            </p>
+            <div class="w-full bg-gray-200 rounded-full h-4 mx-auto">
+                <div id="progress-bar" class="bg-brand-green h-4 rounded-full" style="width: 0%;"></div>
+            </div>
+        </section>
+
+        <!-- Checklist Section -->
+        <section class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8">
+            <!-- Aangepaste, motiverende H2 -->
+            <h2 class="text-2xl font-bold text-brand-green mb-6">Stap 2: Vink Af Wat Je Al Hebt</h2>
+            <div id="tab-buttons" class="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
+                <!-- Tab buttons will be dynamically loaded here -->
+            </div>
+            <div id="tab-contents">
+                <!-- Tab content will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <!-- Missing Items Section -->
+        <section class="bg-brand-green-light rounded-lg shadow-xl p-6 md:p-8 mx-auto max-w-full">
+            <!-- Aangepaste, duidelijkere H3 -->
+            <h3 class="text-xl font-bold text-brand-green mb-2">Jouw Persoonlijke Boodschappenlijst:</h3>
+            <div id="missing-items-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Missing items will be listed here as cards -->
+            </div>
+            <button id="reset-button" class="btn-primary mt-6 py-2 px-4 rounded-full shadow-md hover:scale-105 transform">Reset Checklist</button>
+        </section>
+
+    </div>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        window.onload = function() {
+            // ======================= JAVASCRIPT AANPASSINGEN =======================
+            const survivalKitItems = [
+                // Categorie: Water & Voedsel
+                { category: "Water & Voedsel", name: "Water in flessen", emoji: "💧", baseQuantity: 3, unit: "liter", scalesWithAdults: true, scalesWithChildren: true, per: "p.p. per dag" },
+                { category: "Water & Voedsel", name: "Houdbaar eten (blik, pasta, rijst, etc.)", emoji: "🥫", baseQuantity: 1, unit: "voorraad", scalesWithAdults: true, scalesWithChildren: true, per: "p.p. (voor 3 dagen)" },
+                { category: "Water & Voedsel", name: "Handmatige blikopener", emoji: "🔧", baseQuantity: 1, unit: "st.", scalesWithAdults: false, scalesWithChildren: false },
+
+                // Categorie: Communicatie & Informatie
+                { category: "Informatie & Communicatie", name: "Opwindbare radio / radio op batterijen", emoji: "📻", baseQuantity: 1, unit: "st.", scalesWithAdults: false, scalesWithChildren: false },
+                { category: "Informatie & Communicatie", name: "Powerbank (volledig opgeladen)", emoji: "🔋", baseQuantity: 1, unit: "st.", scalesWithAdults: true, scalesWithChildren: false, per: "p. volwassene" },
+                { category: "Informatie & Communicatie", name: "Lijst met belangrijke telefoonnummers", emoji: "📞", baseQuantity: 1, unit: "st.", scalesWithAdults: false, scalesWithChildren: false },
+
+                // Categorie: Verlichting & Warmte
+                { category: "Verlichting & Warmte", name: "Zaklamp (LED) met extra batterijen", emoji: "💡", baseQuantity: 1, unit: "st.", scalesWithAdults: false, scalesWithChildren: false },
+                { category: "Verlichting & Warmte", name: "Kaarsen en lucifers (waterdicht)", emoji: "🕯️", baseQuantity: 1, unit: "set", scalesWithAdults: false, scalesWithChildren: false },
+                { category: "Verlichting & Warmte", name: "Dekens of slaapzakken", emoji: "🛌", baseQuantity: 1, unit: "st.", scalesWithAdults: true, scalesWithChildren: true, per: "p.p." },
+                
+                // Categorie: Gezondheid & Hygiëne
+                { category: "Gezondheid & Hygiëne", name: "EHBO-doos", emoji: "🩹", baseQuantity: 1, unit: "st.", scalesWithAdults: false, scalesWithChildren: false },
+                { category: "Gezondheid & Hygiëne", name: "Persoonlijke medicijnen (min. 7 dagen)", emoji: "💊", baseQuantity: 1, unit: "voorraad", scalesWithAdults: true, scalesWithChildren: true, per: "p.p. die het gebruikt" },
+                { category: "Gezondheid & Hygiëne", name: "Desinfecterende handgel", emoji: "🧴", baseQuantity: 1, unit: "fles", scalesWithAdults: false, scalesWithChildren: false },
+                { category: "Gezondheid & Hygiëne", name: "Toilettas (zeep, tandenborstel, etc.)", emoji: "🦷", baseQuantity: 1, unit: "st.", scalesWithAdults: true, scalesWithChildren: true, per: "p.p." },
+                { category: "Gezondheid & Hygiëne", name: "WC-papier en/of natte doekjes", emoji: "🧻", baseQuantity: 1, unit: "voorraad", scalesWithAdults: false, scalesWithChildren: false },
+
+                // Categorie: Veiligheid & Documenten
+                { category: "Veiligheid & Documenten", name: "Kopieën van identiteitsbewijzen (waterdicht)", emoji: "📄", baseQuantity: 1, unit: "set", scalesWithAdults: false, scalesWithChildren: false },
+                { category: "Veiligheid & Documenten", name: "Reservesleutels van huis en auto", emoji: "🔑", baseQuantity: 1, unit: "set", scalesWithAdults: false, scalesWithChildren: false },
+                { category: "Veiligheid & Documenten", name: "Contant geld (kleine coupures)", emoji: "💰", baseQuantity: 50, unit: "€ (richtlijn)", scalesWithAdults: true, scalesWithChildren: false, per: "p. volwassene" },
+                { category: "Veiligheid & Documenten", name: "Fluitje", emoji: " 📣", baseQuantity: 1, unit: "st.", scalesWithAdults: true, scalesWithChildren: true, per: "p.p." },
+                { category: "Veiligheid & Documenten", name: "Multitool of Zwitsers zakmes", emoji: "🛠️", baseQuantity: 1, unit: "st.", scalesWithAdults: false, scalesWithChildren: false },
+                { category: "Veiligheid & Documenten", name: "Ducttape", emoji: " 📦", baseQuantity: 1, unit: "rol", scalesWithAdults: false, scalesWithChildren: false },
+
+                // Categorie: Specifieke Behoeften
+                { category: "Specifieke Behoeften", name: "Babyvoeding & luiers (indien van toepassing)", emoji: "🍼", baseQuantity: 1, unit: "voorraad", scalesWithAdults: false, scalesWithChildren: false },
+                { category: "Specifieke Behoeften", name: "Voer & water voor huisdieren (indien van toepassing)", emoji: "🐾", baseQuantity: 1, unit: "voorraad", scalesWithAdults: false, scalesWithChildren: false },
+                { category: "Specifieke Behoeften", name: "Spelletje, boek of knuffel (voor kinderen)", emoji: "🧸", baseQuantity: 1, unit: "st.", scalesWithAdults: false, scalesWithChildren: false },
+            ];
+            // ======================= EINDE JAVASCRIPT AANPASSINGEN =======================
+            
+            // De rest van de JavaScript logica blijft ongewijzigd, omdat die correct functioneert.
+            //...
+            const tabButtonsContainer = document.getElementById('tab-buttons');
+            const tabContentsContainer = document.getElementById('tab-contents');
+            const collectedCountSpan = document.getElementById('collected-count');
+            const totalCountSpan = document.getElementById('total-count');
+            const progressBar = document.getElementById('progress-bar');
+            const missingItemsList = document.getElementById('missing-items-list');
+            const resetButton = document.getElementById('reset-button');
+            const numAdultsInput = document.getElementById('num-adults');
+            const numChildrenInput = document.getElementById('num-children');
+            const downloadPdfButton = document.getElementById('download-pdf-button');
+
+            let collectedItems = new Set();
+            let numberOfAdults = parseInt(numAdultsInput.value);
+            let numberOfChildren = parseInt(numChildrenInput.value);
+
+            function calculateQuantity(item) {
+                let quantity = 0;
+                let peopleCount = 0;
+
+                if (item.scalesWithAdults) {
+                    peopleCount += numberOfAdults;
+                }
+                if (item.scalesWithChildren) {
+                    peopleCount += numberOfChildren;
+                }
+
+                if (peopleCount > 0) {
+                     // Specifieke logica voor contant geld blijft behouden, maar aangepast
+                    if (item.name === "Contant geld (kleine coupures)") {
+                        quantity = item.baseQuantity * numberOfAdults; // Alleen voor volwassenen
+                    } else {
+                        quantity = item.baseQuantity * peopleCount;
+                    }
+                } else if (!item.scalesWithAdults && !item.scalesWithChildren) {
+                    quantity = item.baseQuantity;
+                }
+                
+                // Speciale regel voor items per volwassene, niet per persoon
+                if (item.per === "p. volwassene") {
+                    quantity = item.baseQuantity * numberOfAdults;
+                } else if (item.per === "p.p. die het gebruikt") {
+                     // Voor medicijnen is het niet schaalbaar met aantal, maar een 'ja/nee' per persoon.
+                     // We laten het als een algemene voorraad staan. De tekst verduidelijkt dit.
+                     // De logica kan dit niet perfect afvangen zonder complexiteit toe te voegen.
+                     quantity = item.baseQuantity; // Reset naar basis, de tekst is leidend.
+                }
+
+                return quantity;
+            }
+
+            function renderChecklist() {
+                tabButtonsContainer.innerHTML = '';
+                tabContentsContainer.innerHTML = '';
+
+                const categories = [...new Set(survivalKitItems.map(item => item.category))];
+                
+                categories.forEach((category, catIndex) => {
+                    const button = document.createElement('button');
+                    button.className = 'tab-button px-4 py-2 text-sm';
+                    button.textContent = category;
+                    button.dataset.category = category;
+                    button.addEventListener('click', () => switchTab(category));
+                    tabButtonsContainer.appendChild(button);
+
+                    const contentDiv = document.createElement('div');
+                    contentDiv.id = `tab-content-${category.replace(/[^a-zA-Z0-9-]/g, '-')}`;
+                    contentDiv.className = 'tab-content';
+                    tabContentsContainer.appendChild(contentDiv);
+
+                    survivalKitItems.filter(item => item.category === category).forEach((item, itemIndex) => {
+                        const originalIndex = survivalKitItems.indexOf(item);
+                        const requiredQuantity = calculateQuantity(item);
+                        
+                        let quantityText = "";
+                        if (item.name.includes("(indien van toepassing)")) {
+                            // Geen hoeveelheid tonen voor optionele items, de gebruiker bepaalt zelf.
+                        } else {
+                            quantityText = `(${requiredQuantity > 0 ? requiredQuantity : item.baseQuantity} ${item.unit}${item.per ? ' ' + item.per : ''})`;
+                        }
+
+                        const label = document.createElement('label');
+                        label.className = 'checkbox-container flex items-center text-gray-800';
+                        label.innerHTML = `
+                            <input type="checkbox" data-index="${originalIndex}" ${collectedItems.has(originalIndex) ? 'checked' : ''}>
+                            <span class="checkmark"></span>
+                            <span class="ml-2 ${collectedItems.has(originalIndex) ? 'item-checked' : ''}">${item.emoji} ${item.name} <span class="text-gray-500 text-sm">${quantityText}</span></span>
+                        `;
+                        contentDiv.appendChild(label);
+                    });
+                });
+
+                const lastActiveTab = localStorage.getItem('activeTabCategory');
+                if (lastActiveTab && categories.includes(lastActiveTab)) {
+                    switchTab(lastActiveTab);
+                } else if (categories.length > 0) {
+                    switchTab(categories[0]);
+                }
+
+                updateSummary();
+            }
+
+            function switchTab(category) {
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+                document.querySelector(`.tab-button[data-category="${category}"]`).classList.add('active');
+                document.getElementById(`tab-content-${category.replace(/[^a-zA-Z0-9-]/g, '-')}`).classList.add('active');
+                localStorage.setItem('activeTabCategory', category);
+            }
+
+
+            function updateSummary() {
+                collectedItems.clear();
+                const checkboxes = document.querySelectorAll('#tab-contents input[type="checkbox"]');
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        collectedItems.add(parseInt(checkbox.dataset.index));
+                    }
+                });
+
+                const totalItems = survivalKitItems.length;
+                const currentCollected = collectedItems.size;
+
+                collectedCountSpan.textContent = currentCollected;
+                totalCountSpan.textContent = totalItems;
+
+                const progressPercentage = (currentCollected / totalItems) * 100;
+                progressBar.style.width = `${progressPercentage}%`;
+
+                missingItemsList.innerHTML = '';
+                survivalKitItems.forEach((item, index) => {
+                    if (!collectedItems.has(index)) {
+                        const requiredQuantity = calculateQuantity(item);
+                        let quantityText = "";
+                         if (!item.name.includes("(indien van toepassing)")) {
+                            quantityText = `(${requiredQuantity > 0 ? requiredQuantity : item.baseQuantity} ${item.unit}${item.per ? ' ' + item.per : ''})`;
+                        }
+                        
+                        const missingItemCard = document.createElement('div');
+                        missingItemCard.className = 'missing-item-card';
+                        missingItemCard.innerHTML = `
+                            <span class="text-2xl">${item.emoji}</span>
+                            <span>${item.name} <span class="text-gray-500 text-sm">${quantityText}</span></span>
+                        `;
+                        missingItemsList.appendChild(missingItemCard);
+                    }
+                });
+                if (missingItemsList.innerHTML === '') {
+                    missingItemsList.innerHTML = '<p class="text-gray-500">Alle essentiële items zijn verzameld! Goed gedaan!</p>';
+                }
+            }
+
+            function handleCheckboxChange(event) {
+                const checkbox = event.target;
+                const itemTextSpan = checkbox.nextElementSibling.nextElementSibling;
+                if (checkbox.checked) {
+                    itemTextSpan.classList.add('item-checked');
+                } else {
+                    itemTextSpan.classList.remove('item-checked');
+                }
+                updateSummary();
+                saveState();
+            }
+
+            function resetChecklist() {
+                collectedItems.clear();
+                renderChecklist();
+                localStorage.removeItem('noodpakketItems');
+            }
+
+            function loadState() {
+                const savedState = localStorage.getItem('noodpakketItems');
+                if (savedState) {
+                    collectedItems = new Set(JSON.parse(savedState));
+                }
+                const savedAdults = localStorage.getItem('numAdults');
+                if (savedAdults) {
+                    numAdultsInput.value = savedAdults;
+                    numberOfAdults = parseInt(savedAdults);
+                }
+                const savedChildren = localStorage.getItem('numChildren');
+                if (savedChildren) {
+                    numChildrenInput.value = savedChildren;
+                    numberOfChildren = parseInt(savedChildren);
+                }
+            }
+
+            function saveState() {
+                localStorage.setItem('noodpakketItems', JSON.stringify(Array.from(collectedItems)));
+                localStorage.setItem('numAdults', numAdultsInput.value);
+                localStorage.setItem('numChildren', numChildrenInput.value);
+            }
+
+            function downloadPdf() {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+
+                let yPos = 20;
+                const margin = 20;
+                const lineHeight = 10;
+                const maxWidth = doc.internal.pageSize.getWidth() - 2 * margin;
+
+                doc.setFontSize(22);
+                doc.text("Jouw Persoonlijke Noodpakket Checklist", margin, yPos);
+                yPos += lineHeight * 2;
+
+                doc.setFontSize(12);
+                doc.text(`Aantal volwassenen: ${numberOfAdults}`, margin, yPos);
+                yPos += lineHeight;
+                doc.text(`Aantal kinderen: ${numberOfChildren}`, margin, yPos);
+                yPos += lineHeight * 2;
+                
+                doc.setFontSize(12);
+                doc.text("Op basis van de richtlijnen van de Nederlandse overheid.", margin, yPos);
+                yPos += lineHeight * 2;
+
+
+                let currentCategory = '';
+                doc.setFontSize(12);
+
+                survivalKitItems.forEach((item, index) => {
+                    if (item.category !== currentCategory) {
+                        currentCategory = item.category;
+                        yPos += lineHeight * 0.5;
+                        doc.setFontSize(14);
+                        doc.setTextColor(46, 91, 55);
+                        doc.text(item.category, margin, yPos);
+                        yPos += lineHeight;
+                        doc.setTextColor(0, 0, 0);
+                        doc.setFontSize(12);
+                    }
+
+                    const requiredQuantity = calculateQuantity(item);
+                     let quantityText = "";
+                     if (!item.name.includes("(indien van toepassing)")) {
+                        quantityText = `(${requiredQuantity > 0 ? requiredQuantity : item.baseQuantity} ${item.unit}${item.per ? ' ' + item.per : ''})`;
+                    }
+                    const status = collectedItems.has(index) ? "[X]" : "[ ]";
+                    const itemLine = `${status} ${item.emoji} ${item.name} ${quantityText}`;
+
+                    const splitText = doc.splitTextToSize(itemLine, maxWidth);
+                    doc.text(splitText, margin, yPos);
+                    yPos += lineHeight * splitText.length;
+
+                    if (yPos > doc.internal.pageSize.getHeight() - margin) {
+                        doc.addPage();
+                        yPos = margin;
+                    }
+                });
+
+                doc.save('goedoverleven_noodpakket_checklist.pdf');
+            }
+
+            loadState();
+            renderChecklist();
+
+            tabContentsContainer.addEventListener('change', handleCheckboxChange);
+            resetButton.addEventListener('click', resetChecklist);
+            numAdultsInput.addEventListener('input', () => {
+                numberOfAdults = parseInt(numAdultsInput.value) || 0;
+                if (numberOfAdults < 1) numAdultsInput.value = 1;
+                numberOfAdults = parseInt(numAdultsInput.value);
+                renderChecklist();
+                saveState();
+            });
+            numChildrenInput.addEventListener('input', () => {
+                numberOfChildren = parseInt(numChildrenInput.value) || 0;
+                if (numberOfChildren < 0) numChildrenInput.value = 0;
+                numberOfChildren = parseInt(numChildrenInput.value);
+                renderChecklist();
+                saveState();
+            });
+            downloadPdfButton.addEventListener('click', downloadPdf);
+        };
+    </script>
+{{ end }}

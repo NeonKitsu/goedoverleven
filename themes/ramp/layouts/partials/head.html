@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  {{ if .IsHome }}
+    {{ .Site.Title }} - {{ .Site.Params.tagline }}
+  {{ else if or (eq .Type "info") (eq .Type "pillar") }}
+    {{ .Title }}
+  {{ else }}
+    {{ .Title }} - {{ .Site.Title }}
+  {{ end }}
+</title>
+
+{{ if .IsHome }}
+<meta name="description" content="{{ .Site.Params.description }}">
+{{ else if .Description }}
+<meta name="description" content="{{ .Description }}">
+{{ else }}
+<meta name="description" content="{{ .Description }}">
+{{ end }}
+<link rel="icon" href="{{ .Site.Params.favicon | absURL }}" type="image/x-icon">
+<link rel="apple-touch-icon" href="{{ .Site.Params.favicon | absURL }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon | absURL }}">
+<link rel="apple-touch-icon" sizes="152x152" href="{{ .Site.Params.favicon | absURL }}">
+<link rel="apple-touch-icon" sizes="120x120" href="{{ .Site.Params.favicon | absURL }}">
+<link rel="canonical" href="{{ .Permalink | absURL }}">
+{{ partial "schema.html" . }}
+{{ partialCached "head/css.html" . }}
+

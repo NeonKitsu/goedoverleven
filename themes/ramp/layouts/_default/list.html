@@ -1,0 +1,78 @@
+{{ define "main" }}
+
+{{ if eq .Type "pillar" }}
+<!-- Main Content -->
+    <div class="container mx-auto px-6 py-12 md:py-16">
+        
+        <article class="max-w-4xl mx-auto">
+            
+            <!-- Article Header -->
+            <header class="text-center mb-24">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-brand-green mb-4">{{ .Title }}</h1>
+                <p class="text-lg text-slate-600">{{ .Description }}</p>
+            </header>
+            <div class="p-6 rounded-lg bg-white shadow-md">
+                {{ .Content }}
+            </div>
+
+        </article>
+
+        <!-- Cluster Content Section -->
+        <aside class="pt-16">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-900 text-center mb-10">Verdiep Je Kennis: Gerelateerde Artikelen</h2>
+                
+                <!-- Grid of Cards, each is a self-contained article summary -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {{ range .RegularPages.ByDate.Reverse }}
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2"><a href="{{ .Permalink | absURL }}" class="hover:text-red-500 stretched-link">{{ .Title }}</a></h3>
+                            <p class="text-slate-600">{{ if .Description }} {{ .Description }} {{ else }} {{ .Summary | truncate 150 }} {{ end }}</p>
+                        </div>
+                    </article>
+                    {{ end }}
+
+                </div>
+            </div>
+        </aside>
+
+    </div>
+{{ else }}
+<div class="container mx-auto px-6 py-12 md:py-16">
+        
+        <section class="max-w-4xl mx-auto">
+            
+            <!-- Article Header -->
+            <header class="text-center mb-24">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-brand-green mb-4">{{ .Title }}</h1>
+                <p class="text-lg text-slate-600">{{ .Description }}</p>
+            </header>
+
+         <div class="pt-16">
+            <div class="max-w-6xl mx-auto">
+                
+                <!-- Grid of Cards, each is a self-contained article summary -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {{ range .RegularPages.ByDate.Reverse }}
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="p-6">
+                            <h2 class="text-xl font-bold text-slate-800 mb-2"><a href="{{ .Permalink | absURL }}" class="hover:text-red-500 stretched-link">{{ .Title }}</a></h2>
+                            <p class="text-slate-600">{{ if .Description }} {{ .Description }} {{ else }} {{ .Summary | truncate 150 }} {{ end }}</p>
+                        </div>
+                    </article>
+                    {{ end }}
+
+                </div>
+            </div>
+        </div>
+
+        </section>
+
+     
+       
+
+    </div>
+
+{{ end }}
+{{ end }}
