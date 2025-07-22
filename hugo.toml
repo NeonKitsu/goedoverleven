@@ -18,7 +18,7 @@ disableKinds = ["taxonomy", "term", "rss"]
 
 
 [params]
-    tagline = 'Uw Gids voor Paraatheid'
-    description = 'Word écht voorbereid op elke crisis met Goed Overleven. Ontdek complete gidsen, praktische tips & essentiële kennis voor noodsituaties en zelfredzaamheid. Bescherm uw gezin vandaag nog!'
+    tagline = 'Voorbereiden op Crisis en een Onzekere Toekomst'
+    description = 'Maak je je zorgen over de toenemende onrust in de wereld? Goedoverleven.nl biedt nuchtere, stapsgewijze gidsen voor het aanleggen van een noodpakket, waterzuivering en medische zelfredzaamheid. Verander onzekerheid vandaag nog in een praktisch plan.'
     logo = '/images/goedoverleven.webp'
     favicon = '/goedoverleven.ico'
