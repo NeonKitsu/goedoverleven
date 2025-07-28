@@ -1,0 +1,111 @@
+
+{
+  "/": {
+    "title": "GoedOverleven.nl - Klaar voor elke crisis",
+    "description": "Van stroomuitval tot extreem weer: een goede voorbereiding is essentieel. Wij bieden praktische gidsen en tools om jou en je gezin veilig te houden."
+  },
+  "/noodpakket": {
+    "title": "Noodpakket Gids - Jouw Eerste Stap in Voorbereiding",
+    "description": "Leer hoe je een compleet en persoonlijk noodpakket samenstelt om de eerste 72 uur van een crisis zelfstandig te overbruggen met onze complete gids."
+  },
+  "/noodpakket/samenstellen-noodpakket": {
+    "title": "Interactieve Checklist: Stel je Noodpakket Samen",
+    "description": "Gebruik onze gratis, interactieve tool om een noodpakket samen te stellen dat perfect is afgestemd op jouw huishouden. Download je persoonlijke PDF."
+  },
+  "/noodpakket/voorbereiden-op-stroomuitval": {
+    "title": "Stroomuitval Gids: Voorbereid op het Donker",
+    "description": "Een praktische gids om je huis warm, verlicht en comfortabel te houden als de stroom wegvalt. Leer over warmte, licht en koken zonder stroom."
+  },
+  "/noodpakket/overstromingen-noodpakket": {
+    "title": "Overstroming Gids: Voorbereid op Hoogwater",
+    "description": "Ontdek de cruciale extra items en stappen die nodig zijn bij hoogwater. Upgrade je noodpakket voor een overstromingsscenario."
+  },
+  "/noodpakket/vluchttas": {
+    "title": "Vluchttas Gids: Wat Neem Je Mee als Je Weg Moet?",
+    "description": "Leer de kunst van het prioriteren en stel een lichte, effectieve vluchttas (grab-and-go bag) samen voor als je plotseling je huis moet verlaten."
+  },
+  "/noodpakket/auto-noodpakket": {
+    "title": "Auto Noodkit: Voorbereid op Pech Onderweg",
+    "description": "Stel een essentiële noodkit voor in je auto samen. Wees voorbereid op pech onderweg, ver van huis, in alle seizoenen."
+  },
+  "/vaardigheden": {
+    "title": "Vaardigheden voor Zelfredzaamheid: Leer Overleven",
+    "description": "Een noodpakket is het begin, kennis is de sleutel. Leer essentiële vaardigheden zoals water zuiveren en koken zonder stroom voor echte zelfredzaamheid."
+  },
+  "/vaardigheden/water": {
+    "title": "Water Gids: Zuiveren, Opslaan en Vinden",
+    "description": "De complete gids voor waterzekerheid. Leer alles over water opslaan, de beste filters vergelijken, en zelf waterbronnen creëren."
+  },
+  "/vaardigheden/water/filters-vergelijken": {
+    "title": "Vergelijking Waterfilters: Berkey, Sawyer & LifeStraw",
+    "description": "Een objectieve vergelijking van de top waterfilters voor thuis (Berkey) en onderweg (Sawyer MINI, LifeStraw). Maak de juiste keuze."
+  },
+  "/vaardigheden/water/langdurig-opslaan": {
+    "title": "Water Langdurig Opslaan: Jouw Veilige Voorraad",
+    "description": "Een simpel stappenplan om kraanwater veilig op te slaan voor maanden of zelfs jaren. Kies de juiste containers en bewaar ze correct."
+  },
+  "/vaardigheden/water/zuiveren-zonder-filter": {
+    "title": "Water Zuiveren Zonder Filter: Koken & Desinfectie",
+    "description": "Leer de twee meest betrouwbare methoden om water veilig te maken als je geen filter hebt: koken en desinfectie met tabletten."
+  },
+  "/vaardigheden/water/regenwater-opvangen": {
+    "title": "Regenwater Opvangen: Bouw Je Eigen Waterbron",
+    "description": "Creëer je eigen onafhankelijke waterbron met deze praktische handleiding voor het opvangen en zuiveren van regenwater met een simpel systeem."
+  },
+  "/vaardigheden/water/waterbronnen-vinden": {
+    "title": "Waterbronnen Vinden in de Natuur: Een Noodgids",
+    "description": "Leer waar je waterbronnen kunt vinden in de natuur en, nog belangrijker, hoe je de risico's inschat en het water veilig zuivert."
+  },
+  "/vaardigheden/water/kookadvies-begrijpen": {
+    "title": "Kookadvies voor Kraanwater: Wat & Waarom",
+    "description": "Wat betekent een kookadvies van het waterbedrijf en wat moet je precies doen? Een praktische gids voor een veelvoorkomend scenario."
+  },
+  "/vaardigheden/voedsel": {
+    "title": "Voedselgids: Voorraad, Koken zonder Stroom & Meer",
+    "description": "De complete gids voor voedselzekerheid. Leer over het aanleggen van een slimme voorraad, koken zonder stroom en zelf voedsel produceren."
+  },
+  "/vaardigheden/voedsel/koken-zonder-stroom": {
+    "title": "Koken Zonder Stroom: Veilige Opties Vergeleken",
+    "description": "Een vergelijking van de beste en veiligste manieren om te koken zonder stroom: van campinggas en rocket stoves tot je barbecue."
+  },
+  "/vaardigheden/voedsel/crisis-moestuin": {
+    "title": "Crisis Moestuin: 10 Makkelijke Groenten voor Beginners",
+    "description": "Leer zelf voedsel verbouwen met onze top 10 van makkelijke, snelle en voedzame groenten, zelfs geschikt voor op een balkon."
+  },
+  "/vaardigheden/voedsel/voorraadkast-checklist": {
+    "title": "Perfecte Voorraadkast: 25 Essentiële Producten",
+    "description": "Een concrete, afvinkbare lijst van 25 lang houdbare, betaalbare en calorierijke producten die de ruggengraat van je voedselvoorraad vormen."
+  },
+  "/vaardigheden/voedsel/conserveren-voor-beginners": {
+    "title": "Voedsel Conserveren: Inmaken, Drogen & Vacumeren",
+    "description": "Leer de basisprincipes van drie toegankelijke conserveringstechnieken: inmaken (wecken), drogen (dehydrateren) en vacumeren."
+  },
+  "/vaardigheden/voedsel/noodvoorraad-recepten": {
+    "title": "Noodvoorraad Recepten: 7 Lekkere Maaltijden uit Blik",
+    "description": "Zet een verrassend lekkere en voedzame maaltijd op tafel met alleen houdbare ingrediënten uit je voorraadkast. 7 simpele recepten."
+  },
+  "/vaardigheden/voedsel/jagen-en-vissen": {
+    "title": "Jagen en Vissen: Wetgeving en Basisprincipes",
+    "description": "Een theoretisch overzicht van jagen en vissen in een extreem scenario, met een belangrijke disclaimer over de huidige wetgeving."
+  },
+  "/over-ons": {
+    "title": "Over Ons: Onze Missie voor Nuchtere Zelfredzaamheid",
+    "description": "Lees over onze missie en filosofie. GoedOverleven.nl is jouw nuchtere, betrouwbare bron voor crisisvoorbereiding, vrij van paniekzaaierij."
+  },
+  "/disclaimer": {
+    "title": "Disclaimer - GoedOverleven.nl",
+    "description": "Lees onze disclaimer over het gebruik van de informatie op deze website. De inhoud is informatief en geen vervanging voor professioneel advies."
+  },
+  "/privacybeleid": {
+    "title": "Privacybeleid - GoedOverleven.nl",
+    "description": "Lees hoe wij omgaan met uw privacy. We minimaliseren dataverzameling en leggen transparant uit hoe de site functioneert."
+  },
+  "/community": {
+    "title": "Community - Discussieer Mee op GoedOverleven.nl",
+    "description": "Word lid van de community om kennis te delen, ervaringen uit te wisselen en te leren van andere preppers."
+  },
+  "/contact": {
+    "title": "Contact - Neem contact op met GoedOverleven.nl",
+    "description": "Heeft u een vraag of opmerking? Neem contact met ons op via het contactformulier."
+  }
+}

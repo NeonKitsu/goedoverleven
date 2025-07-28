@@ -1,17 +1,21 @@
 {
-  "name": "goedoverleven",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "goedoverleven.nl",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "tailwind": "npx @tailwindcss/cli -i ./themes/ramp/assets/css/base.css -o ./themes/ramp/assets/css/tail.css --watch"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.11",
-    "tailwindcss": "^4.1.11"
+    "react-dom": "^19.1.0",
+    "react": "^19.1.0",
+    "wouter": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
   }
 }
